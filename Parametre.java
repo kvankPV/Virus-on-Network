@@ -8,66 +8,61 @@ public class Parametre {
     private double zotavenie;
     private double odolnost;
     
-    public Parametre(int pocetG,int vzdialenost, int infikovany, double sirenie, int kontr, double zotav, double odol) {  
-           if((pocetG < 0) || (pocetG > 50)){
-            System.out.println("Zadali ste chybnú hodnotu guličiek.");
-        }else{
-            this.pocetGuliciek = pocetG;
-        }
-        
-         if((vzdialenost < 0) || (vzdialenost > 49)){
-            System.out.println("Zadali ste chybnú hodnotu vzdialenosti.");
-        }else{
-            this.vzdialenostMedziG = vzdialenost; 
-        }
-        
-        if((infikovany < 0) || ( infikovany > 50)){
-            System.out.println("Zadali ste chybnú hodnotu infikovaných.");
-        }else{
-            this.pocInf = infikovany; 
-        }
-        
-        if((sirenie < 0 ) || (sirenie > 10)) {
-            System.out.println("Zadali ste chýbnú hodnotu šírenia.");
-        }else {
-            this.sancaSirenia = sirenie;
-        }
+    public Parametre(int pocetG,int vzdialenost, int infikovany, double sirenie, double zotav, double odol) {  
+        this.pocetGuliciek = pocetG;
+        this.vzdialenostMedziG = vzdialenost;
+        this.pocInf = infikovany;
+        this.sancaSirenia = sirenie;
+        this.zotavenie = zotav;
+        this.odolnost = odol;
+    }
 
-        if((zotav < 0 ) || (zotav > 10 )) {
-            System.out.println("Zadali ste chýbnú hodnotu zotavenia.");
-        }else {
-            this.zotavenie = zotav;
+    public int pocetGuliciek() {
+        if((this.pocetGuliciek > 0) && (this.pocetGuliciek <= 50)){
+            return this.pocetGuliciek;
+        }else{
+            return 0;
         }
-        
-        if((odol < 0 ) || (odol > 100 )) {
-            System.out.println("Zadali ste chýbnú hodnotu odolnosti.");
-        }else {
-            this.odolnost = odol;
+    }
+    
+    public int vzdialenostMedziG() {
+        if((this.vzdialenostMedziG > 0) && (this.vzdialenostMedziG <= 49)){
+            return this.vzdialenostMedziG;
+        }else{
+            return 0;
         }
-   }
+    }
+    
+    public int pocInf() {
+        if((this.pocInf > 0) && ( this.pocInf <= 50)){
+            return this.pocInf;
+        }else{
+             return 0;
+        }
+    }
+    
+    public double sancaSirenia() {   
+        if(( this.sancaSirenia > 0) && (this.sancaSirenia <= 10)) {
+            return this.sancaSirenia;
+        }else {
+            return 0;
+        }
+    }  
+    
+    public double zotavenie() {
+        if((this.zotavenie > 0 ) && (this.zotavenie <= 10 )) {
+             return this.zotavenie;
+        }else {
+             return 0;
+        }
+    }
    
-   public int getPocetGuliciek() {
-       return this.pocetGuliciek;
-   }
-   
-   public int getVzdialMedziGulic() {
-       return this.vzdialenostMedziG;
-   }
-   
-   public int getPocetInfik() {
-       return this.pocInf;
-   }
-   
-   public double getSancaSirenia() {
-       return this.sancaSirenia;
-   }
-   
-   public double getZotavenie() {
-       return this.zotavenie;
-   }
-   
-   public double getOdolnost() {
-       return this.odolnost;
+    public double odolnost() {
+        if((this.odolnost > 0 ) && (this.odolnost <= 100)) {
+            return this.odolnost;
+        }else {
+            return 0;
+        }
     }
 }
     
